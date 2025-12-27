@@ -1,0 +1,83 @@
+class Host:
+   def __init__(self,url,field,action):
+       self.url = url 
+       self.
+
+get_count_tabs = 4
+hosts = db.get_hosts() -> [...hosts]
+
+Manager.bomb(number)
+
+def bomb(cls,number):
+    cls.number = number 
+
+    cls.start()
+
+
+
+
+-----------------------------
+
+
+check 
+  |
+  |
+  |
+  |
+  |
+get config -> count tabs|hosts 
+
+
+bomb()
+  |
+  |
+  |
+  |
+  data = await get_data(limit=max_count,offset=offset)
+  |
+  |
+  |
+while not data is None:
+   
+   get data...MAX_TABS 
+   
+   tabs.set_data(...data)
+
+   gather(...tabs)
+                 \
+                  \
+                   \
+                    \
+                [    async run tab()    ]
+                                   \
+                                    \
+                                     \
+                                      \
+                                    [ load page() ]
+                                                /
+                                               /
+                                              /
+                                             /
+                                          [ ...[actions()] ]
+                                                       /
+                                                      /
+                                                     /
+                                                    /
+                                                  try
+                                                   |
+                                                   |
+                                                   |
+                                                set result(Success or Failed)
+                                                         
+
+WebDriver(
+  bomb
+)
+
+\
+ \ 
+  \
+   \
+    \
+  web_driver = create()
+  bomb(web_driver)
