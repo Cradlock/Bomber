@@ -40,7 +40,7 @@ class WebDriver:
 
     async def __call__(self,func):
         async with async_playwright() as p:
-            self._browser = await p.chromium.launch(headless=False)
+            self._browser = await p.chromium.launch(headless=True)
             self._context = await self._browser.new_context()
 
             print("Инициализация браузера и контекста завершена")
@@ -69,13 +69,16 @@ class WebDriver:
     
     @staticmethod
     async def execute(page : Page,event : str,query : str,data=None):
-        
+        locator = page.locator(query)
+
         try:
-           locator = await page.locator(query).wait_for()
+           await locator.wait_for()
 
         except TimeoutError:
             return f"{query} \n:Элемент не найден"     
-        
+        except Exception as e:
+            print(e," ошибка в driver")
+
         event = WebDriver.EVENTS.get(event,None)
         if not event:
             return "Действие не найдено"
